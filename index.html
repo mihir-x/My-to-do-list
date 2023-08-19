@@ -1,14 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>My To Do List</title>
 </head>
 <body>
-    <header>
-        <h1>MY TO DO LIST</h1>
+    <header class="text-center mt-10">
+        <h1 class="text-3xl font-bold text-sky-400">MY TO DO LIST 🖐📚</h1>
     </header>
+    <main>
+        <div class="text-center mt-8 space-x-3">
+            <input id="input-field" class="w-96 h-12 p-2 focus:ring focus:ring-blue-500 outline-blue-300 rounded-xl border-2 border-sky-400" type="text" placeholder="Type here">
+            <button id="add-task" onclick="addTask(this)" class="py-3 px-4 rounded-xl border-2 border-sky-400 font-medium text-sky-400 hover:bg-sky-400 hover:text-black">Add Task</button>
+        </div>
+        <div class="overflow-x-auto w-[50%] mx-auto mt-10">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Number</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+
+                </tbody>
+            </table>
+            <div class="text-right mt-4">
+                <button onclick="clearBtn(this)" class="uppercase bg-red-400 rounded-lg p-1" >Clear All</button>
+            </div>
+        </div>
+    </main>
+    <script src="./add-task.js"></script>
 </body>
 </html>
